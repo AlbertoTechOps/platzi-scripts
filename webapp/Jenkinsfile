@@ -14,7 +14,7 @@ pipeline {
       steps {
         script {
           dir("webapp") {
-            sh "cd /home/oropezaas/Documentos/Personal/Platzi/DevOps/platzi-scripts-master/webapp; docker build --target ${env.ARTIFACT_ID} ."
+            sh "cd /home/oropezaas/Documentos/Personal/Platzi/DevOps/platzi-scripts-master/webapp; docker build ."
           }
         }
       }
