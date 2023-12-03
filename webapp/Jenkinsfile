@@ -15,7 +15,7 @@ pipeline {
         script {
           dir("webapp") {
              sh "export DOCKER_HOST=tcp://localhost:2375" 
-             dockerImage = docker.build "${env.ARTIFACT_ID}"."
+             dockerImage = docker.build "${env.ARTIFACT_ID}"
           }
         }
       }
