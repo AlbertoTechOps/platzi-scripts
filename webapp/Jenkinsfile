@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    ARTIFACT_ID = "AlbertoTechOps/webapp:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "oropezaas/webapp:${env.BUILD_NUMBER}"
   }
 
   stages {
@@ -14,7 +14,8 @@ pipeline {
       steps {
         script {
           dir("webapp") {
-            sh "cd /home/oropezaas/Documentos/Personal/Platzi/DevOps/platzi-scripts-master/webapp; docker build ."
+             sh "export DOCKER_HOST=tcp://localhost:2375" 
+             dockerImage = docker.build "${env.ARTIFACT_ID}"."
           }
         }
       }
